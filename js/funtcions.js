@@ -56,7 +56,9 @@ function load_page(){
 function send_info(){
     let name = document.getElementById("name").value;
     let last_name = document.getElementById("last_name").value;
-    if(name.length == 0 || last_name.length ==0){   
+    let password = document.getElementById("password").value;
+    let repeat_password = document.getElementById("repeat_password").value;
+    if(name.length == 0 || last_name.length ==0 || password.length ==0 || repeat_password.length ==0 ){   
     Swal.fire({
         title: "CAMPOS VACIOS",
         text: "ALGUNOS DE LOS COAMPOS SE ENCUENTRAN VASIOS",
@@ -75,6 +77,20 @@ function send_info(){
         document.getElementById("last_name").style.background="green"
 
      }
+    if(paword.length==0){
+        document.getElementById("password").style.background="red"
+    
+     }else{
+        document.getElementById("password").style.background="green"
+    
+    if(repeat_paword.length==0){
+        document.getElementById("repeat_password").style.background="red"
+    
+     }else{
+        document.getElementById("repeat_password").style.background="green"
+    
+      }
+      }
     }else{
 
     }
