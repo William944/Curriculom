@@ -54,20 +54,25 @@ function load_page(){
       });
 }
 function send_info(){
-    let name = document.getElementById(name).value;
-    let last_name = document.getElementById(last_name).value;
+    let name = document.getElementById("name").value;
+    let last_name = document.getElementById("last_name").value;
     if(name.length == 0 || last_name.length ==0){   
     Swal.fire({
-        title: "cAMPOS VACIOS",
+        title: "CAMPOS VACIOS",
         text: "ALGUNOS DE LOS COAMPOS SE ENCUENTRAN VASIOS",
         icon: "ERROR"
      });
-     if(name.length==0){
+     if(name.length ==0 ){
         document.getElementById("name").style.border="2px solid red"
 
+     }else{
+        document.getElementById("name").style.border="2px solid green"
      }
-     if(name.length==0){
+     if(last_name.length==0){
         document.getElementById("last_name").style.background="red"
+
+     }else{
+        document.getElementById("last_name").style.background="green"
 
      }
     }else{
