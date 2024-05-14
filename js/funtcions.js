@@ -53,6 +53,12 @@ function load_page(){
         showConfirmButton:false
       });
 }
+
+document.getElementById("valores").value = array_num;
+
+
+
+
 function send_info(){
     let name = document.getElementById("name").value;
     let last_name = document.getElementById("last_name").value;
@@ -95,4 +101,103 @@ function send_info(){
 
     }
     document.getElementById("print").innerText= name+ " "+last_name
+}
+
+// ARRAYS 
+
+var dias_sem = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"];
+var array_num =[1,2,3,4,5,6,7,8,9];
+var array_mix =[1,2.5,"abc"];
+var array_mul =[
+   {name: "william", age:19,color:"green"},
+   {name: "mauricio", age:20,color:"black"},
+   {name: "valery", age:17,color:"white"},
+   {name: "antonela", age:15,color:"gray"}
+
+]
+
+var json_ejm ={
+   name:"William",
+   lastname:"ortega",
+   phone:"3116628266",
+   email:"wmortegagufpso.edu.co"
+
+}
+
+console.log(dias_sem);
+console.log(array_num);
+console.log(array_mix);
+console.log(array_mul);
+console.log(json_ejm);
+
+for(let i=0; i<dias_sem.length;i++){
+   console.log(dias_sem[i]);
+}
+
+var j=0;
+while(j<array_num.length){
+   console.log(array_num[j]);
+   j++
+}
+
+
+var accu=0;
+for(let h=0; h<array_num.length;h++){
+   accu +=array_num[h]
+}
+console.log(accu);
+
+
+var acum =0;
+for(let l=0; l<array_mul.length;l++){
+   console.log(array_mul[l]);
+   acum += array_mul[l].age;
+  
+}
+console.log(acum);
+document.getElementById("print_age").innerText="El valor de la suma es "+acum;
+document.getElementById("print_age_text").innerHTML="<strong> El valor de la suma es "+acum;"</strong>";
+
+
+function limpiar(){
+   document.getElementById("valores").value="";
+   document.getElementById("print_age").innerText="";
+   document.getElementById("print_age_text").innerHTML="";
+
+}
+
+var array_ajem =[1,2,3,4,5,6,7,8,9];
+
+function agreagar(){
+   array_ajem.push(agregar);
+   document.getElementById("valores").value=array_ajem
+   array_ajem =array_ajem;
+}
+
+
+function eliminar(){
+   array_ajem.pop();
+   console.log("valores");
+   document.getElementById("valores").value=array_ajem
+}
+
+
+function eliminar_pri(){
+   array_ajem.shift();
+   console.log("valores");
+   document.getElementById("valores").value=array_ajem
+}
+
+
+function agregar_pri(){
+   array_ajem.unshift();
+   console.log("valores");
+   document.getElementById("valores").value=array_ajem
+   array_ajem =array_ajem;
+}
+
+
+function reversa (){
+   document.getElementById("valores").value =array_ajem.reverse();
+   document.getElementById("valores").inner=array_ajem
 }
